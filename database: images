@@ -1,0 +1,43 @@
+export const CLOTHING_CLASSES = {
+  t_shirt: {
+    name: "T-Shirt",
+    imageExamples: [
+      "https://example.com/images/tshirt1.jpg",
+      "https://example.com/images/tshirt2.jpg"
+    ],
+    visualFeatures: ["short sleeves", "round neck", "soft fabric", "casual look"],
+    baseModelTags: ["t-shirt", "tee", "crew neck", "graphic tee"],
+    colorBias: ["white", "black", "blue", "grey"],
+    fitTypes: ["slim", "regular", "relaxed"],
+    season: ["summer", "spring"],
+    commonMaterials: ["cotton", "polyester"],
+    modelInferenceName: "t_shirt"
+  },
+  dress_shirt: {
+    name: "Dress Shirt",
+    imageExamples: [
+      "https://example.com/images/dressshirt1.jpg"
+    ],
+    visualFeatures: ["buttons", "collar", "structured fabric", "formal look"],
+    baseModelTags: ["button-up", "oxford shirt", "collared shirt"],
+    colorBias: ["white", "blue", "gray"],
+    fitTypes: ["tailored", "regular"],
+    season: ["all"],
+    commonMaterials: ["cotton", "linen"],
+    modelInferenceName: "dress_shirt"
+  },
+  jeans: {
+    name: "Jeans",
+    imageExamples: [
+      "https://example.com/images/jeans1.jpg"
+    ],
+    visualFeatures: ["denim texture", "rivets", "five-pocket", "blue tones"],
+    baseModelTags: ["jeans", "denim", "skinny jeans"],
+    colorBias: ["blue", "black", "gray"],
+    fitTypes: ["skinny", "straight", "bootcut", "relaxed"],
+    season: ["all"],
+    commonMaterials: ["denim"],
+    modelInferenceName: "jeans"
+  },
+  // ... continue for skirt, dress, blouse, jacket, etc.
+};
