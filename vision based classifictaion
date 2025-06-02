@@ -1,0 +1,17 @@
+// Example using pseudo-code
+async function detectClothingTypeFromImage(imageUrl) {
+  const tags = await runVisionModel(imageUrl); // e.g., returns ["blue", "short sleeves", "crew neck", "casual"]
+  const matchingTypes = [];
+
+  for (const [key, item] of Object.entries(CLOTHING_CLASSES)) {
+    let score = 0;
+
+    if (item.visualFeatures.some(f => tags.includes(f))) score += 2;
+    if (item.baseModelTags.some(f => tags.includes(f))) score += 1;
+    if (item.colorBias.some(c => tags.includes(c))) score += 1;
+
+    if (score > 2) matchingTypes.push({ key, score });
+  }
+
+  return matchingTypes.sort((a, b) => b.score - a.score)[0]?.key || "unknown";
+}
