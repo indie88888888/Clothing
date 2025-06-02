@@ -1,0 +1,7 @@
+const GOOGLE_IMAGE_SEARCH_API = `https://serpapi.com/search.json?q=t-shirt&tbm=isch&api_key=YOUR_API_KEY`;
+
+async function fetchImageExamples(type) {
+  const response = await fetch(`${GOOGLE_IMAGE_SEARCH_API.replace('t-shirt', type)}`);
+  const data = await response.json();
+  return data.images_results.slice(0, 3).map(i => i.original);
+}
