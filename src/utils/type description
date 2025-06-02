@@ -1,0 +1,70 @@
+};
+
+const simulatePersonalAnalysis = () => {
+  const skinTones = ['fair', 'light', 'medium', 'olive', 'dark', 'deep'];
+  const bodyShapes = ['rectangle', 'pear', 'apple', 'hourglass', 'inverted triangle'];
+  const faceShapes = ['oval', 'round', 'square', 'heart', 'diamond'];
+  const hairColors = ['blonde', 'brown', 'black', 'red', 'gray'];
+  
+  const skinTone = skinTones[Math.floor(Math.random() * skinTones.length)];
+  const bodyShape = bodyShapes[Math.floor(Math.random() * bodyShapes.length)];
+  const faceShape = faceShapes[Math.floor(Math.random() * faceShapes.length)];
+  const hairColor = hairColors[Math.floor(Math.random() * hairColors.length)];
+  
+  // Generate color palette based on skin tone
+  const colorPalettes = {
+    fair: ['navy', 'burgundy', 'forest green', 'royal blue', 'dusty pink'],
+    light: ['coral', 'mint green', 'lavender', 'peach', 'soft blue'],
+    medium: ['emerald', 'orange', 'bright pink', 'turquoise', 'yellow'],
+    olive: ['earth tones', 'rust', 'deep purple', 'sage green', 'cream'],
+    dark: ['jewel tones', 'fuchsia', 'electric blue', 'bright yellow', 'white'],
+    deep: ['bold colors', 'hot pink', 'lime green', 'bright orange', 'silver']
+  };
+  
+  const colorPalette = colorPalettes[skinTone as keyof typeof colorPalettes] || colorPalettes.medium;
+  
+  // Generate recommendations based on body shape
+  const bodyShapeRecommendations = {
+    rectangle: [
+      'Create curves with belted waists',
+      'Add volume with ruffles or patterns',
+      'Layer different textures',
+      'Choose fitted tops with flowy bottoms'
+    ],
+    pear: [
+      'Emphasize your upper body with bold tops',
+      'Choose A-line skirts and dresses',
+      'Opt for darker colors on bottom',
+      'Add interest with statement necklaces'
+    ],
+    apple: [
+      'Draw attention to your legs',
+      'Choose empire waists',
+      'Opt for v-necks and scoop necklines',
+      'Layer with open cardigans'
+    ],
+    hourglass: [
+      'Emphasize your natural waistline',
+      'Choose fitted styles that follow your curves',
+      'Avoid boxy or oversized silhouettes',
+      'Belt dresses and tops at the waist'
+    ],
+    'inverted triangle': [
+      'Balance your shoulders with wider hips',
+      'Choose bottoms with patterns or lighter colors',
+      'Opt for straight-leg or bootcut pants',
+      'Add volume to your lower half'
+    ]
+  };
+  
+  const recommendations = bodyShapeRecommendations[bodyShape as keyof typeof bodyShapeRecommendations] || bodyShapeRecommendations.rectangle;
+  
+  return {
+    skinTone,
+    bodyShape,
+    faceShape,
+    hairColor,
+    colorPalette,
+    recommendations
+  };
+};
