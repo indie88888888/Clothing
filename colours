@@ -1,0 +1,13 @@
+export const COLOR_CLASSES = {
+  black: {
+    name: "Black",
+    hexRange: ['#000000', '#1a1a1a', '#2b2b2b'],
+    modelTags: ['black', 'dark'],
+  },
+  red: {
+    name: "Red",
+    hexRange: ['#ff0000', '#cc0000', '#aa0000'],
+    modelTags: ['red', 'crimson', 'scarlet'],
+  },
+  // etc...
+};
